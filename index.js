@@ -1,4 +1,5 @@
 const express = require ("express");
+const path = require ("path");
 const app = express ();
 app.listen (3000);
 
@@ -9,5 +10,5 @@ app.get("/er",function (req, res) {
   res.send("vernazzaro mio zio");
 } );
 app.use(function (req, res) { 
-  res.send("ERRORE");
+  res.sendFile(path.join(__dirname, "public", "404.html"));
 } );
